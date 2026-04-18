@@ -47,7 +47,8 @@ export default function HomePage() {
       const formData = new FormData();
       formData.append('file', file);
 
-      const res = await fetch('/api/analyse', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${API_URL}/api/analyse`, {
         method: 'POST',
         body: formData,
       });
