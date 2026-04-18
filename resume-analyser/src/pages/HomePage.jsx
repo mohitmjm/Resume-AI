@@ -16,7 +16,7 @@ export default function HomePage() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [summaryLength, setSummaryLength] = useState(40);
+  const [summaryPct, setSummaryPct] = useState(30);
 
   const onDrop = useCallback((accepted, rejected) => {
     setError('');
@@ -47,7 +47,7 @@ export default function HomePage() {
     try {
       const formData = new FormData();
       formData.append('file', file);
-      formData.append('summary_length', summaryLength);
+      formData.append('summary_pct', summaryPct);
 
       const API_URL = import.meta.env.VITE_API_URL || '';
       const res = await fetch(`${API_URL}/api/analyse`, {
@@ -116,20 +116,20 @@ export default function HomePage() {
 
             {error && <div className="upload-error" role="alert">⚠️ {error}</div>}
 
-            {/* Summary length selector */}
+            {/* Summary percentage selector */}
             <div className="summary-length-wrap">
               <p className="sl-label">
-                Summary length: <span className="sl-value">{summaryLength} words</span>
+                Summary detail: <span className="sl-value">{summaryPct}% of resume</span>
               </p>
               <div className="sl-pills">
                 {[20, 30, 40, 50, 60, 70, 80].map((n) => (
                   <button
                     key={n}
-                    className={`sl-pill ${summaryLength === n ? 'sl-pill-active' : ''}`}
-                    onClick={() => setSummaryLength(n)}
+                    className={`sl-pill ${summaryPct === n ? 'sl-pill-active' : ''}`}
+                    onClick={() => setSummaryPct(n)}
                     type="button"
                   >
-                    {n}
+                    {n}%
                   </button>
                 ))}
               </div>
