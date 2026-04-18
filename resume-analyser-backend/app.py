@@ -16,8 +16,7 @@ from services.summariser import (
 )
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5175", "http://localhost:3000",
-                    "https://*.github.io"])  # GitHub Pages + local dev
+CORS(app)  # Allow all origins — restrict to your Netlify URL in production if needed
 
 MAX_FILE_MB = 10
 
