@@ -1,0 +1,11 @@
+flask
+flask-cors
+PyMuPDF
+python-docx
+scikit-learn
+pandas
+numpy
+spacy
+joblib
+python-dotenv
+pdfplumber

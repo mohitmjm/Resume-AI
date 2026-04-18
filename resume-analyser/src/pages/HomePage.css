@@ -1,0 +1,163 @@
+.home-page { flex: 1; }
+
+.hero { padding-top: var(--sp-20); }
+
+.hero-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-10);
+}
+
+.hero-badge { gap: var(--sp-2); }
+
+.hero-title { max-width: 680px; }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  max-width: 560px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--clr-text-2) !important;
+}
+
+/* Upload card */
+.upload-card {
+  max-width: 640px;
+  margin: 0 auto var(--sp-12);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.dropzone {
+  border: 2px dashed var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-10) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  cursor: pointer;
+  transition: all var(--t-base);
+  text-align: center;
+}
+
+.dropzone:hover,
+.dropzone.drag-active {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-dim);
+}
+
+.dz-icon-wrap {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--r-xl);
+  background: var(--clr-primary-dim);
+  border: 1px solid hsl(217,91%,60%,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary);
+  transition: transform var(--t-base);
+}
+
+.dropzone:hover .dz-icon-wrap,
+.dropzone.drag-active .dz-icon-wrap { transform: scale(1.1); }
+
+.dz-main { font-size: 1.0625rem; font-weight: 600; color: var(--clr-text) !important; }
+.dz-sub  { font-size: 0.875rem; color: var(--clr-text-3) !important; }
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+}
+
+.file-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  background: var(--clr-primary-dim);
+  color: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.file-info { flex: 1; min-width: 0; }
+.file-name { font-weight: 600; color: var(--clr-text) !important; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-meta { font-size: 0.8125rem; color: var(--clr-text-3) !important; margin-top: 2px; }
+
+.remove-btn {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-sm);
+  color: var(--clr-text-3);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--t-fast);
+}
+.remove-btn:hover { background: hsl(0,75%,57%,0.1); color: hsl(0,75%,67%); border-color: hsl(0,75%,57%,0.3); }
+
+.upload-error {
+  padding: var(--sp-3) var(--sp-4);
+  background: hsl(0,75%,57%,0.08);
+  border: 1px solid hsl(0,75%,57%,0.25);
+  border-radius: var(--r-md);
+  color: hsl(0,75%,67%);
+  font-size: 0.875rem;
+}
+
+.analyse-btn { align-self: center; min-width: 200px; justify-content: center; }
+
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--sp-4);
+}
+
+.feature-card {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: transform var(--t-base);
+}
+.feature-card:hover { transform: translateY(-4px); }
+
+.feature-icon {
+  width: 48px; height: 48px;
+  border-radius: var(--r-md);
+  background: var(--clr-primary-dim);
+  color: var(--clr-primary);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.feature-title { font-size: 1rem; font-weight: 700; color: var(--clr-text); }
+.feature-desc  { font-size: 0.875rem; color: var(--clr-text-2) !important; line-height: 1.6; }

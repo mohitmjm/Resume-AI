@@ -1,0 +1,225 @@
+.results-page { min-height: calc(100vh - 64px); }
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+.results-meta { text-align: center; flex: 1; }
+.results-filename { font-size: 0.9375rem; font-weight: 600; color: var(--clr-text) !important; }
+.results-name { font-size: 1.25rem; font-weight: 800; color: var(--clr-text) !important; }
+
+.card-pad { padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-5); }
+
+.section-label {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.section-sub {
+  font-size: 0.8125rem;
+  color: var(--clr-text-3) !important;
+  margin-top: calc(var(--sp-5) * -1 + var(--sp-2));
+}
+
+/* Two column rows */
+.row-two {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+.row-two + .glass-card,
+.row-two + .row-two { margin-top: 0; }
+
+.glass-card { margin-bottom: var(--sp-6); }
+.glass-card:last-child { margin-bottom: 0; }
+
+/* Gauge card */
+.gauge-card { align-items: center; }
+
+.ats-meta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--clr-border);
+  padding-top: var(--sp-4);
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+.meta-k { color: var(--clr-text-3); }
+.meta-v { font-weight: 600; color: var(--clr-text); }
+.ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
+
+/* Summary */
+.summary-card { justify-content: flex-start; }
+
+.summary-text {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--clr-text-2) !important;
+}
+
+.edu-block { margin-top: var(--sp-2); }
+.edu-label { font-size: 0.875rem; font-weight: 700; color: var(--clr-text-2) !important; margin-bottom: var(--sp-2); }
+.edu-item { font-size: 0.8125rem; color: var(--clr-text-3) !important; }
+
+.contact-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+}
+
+.cpill {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-2);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ATS factor table */
+.factor-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  border-top: 1px solid var(--clr-border);
+  padding-top: var(--sp-5);
+}
+
+.factor-row {
+  display: grid;
+  grid-template-columns: 150px 1fr 60px auto;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: 0.8125rem;
+}
+
+.factor-name { font-weight: 600; color: var(--clr-text-2); white-space: nowrap; }
+.factor-bar-wrap {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+.factor-bar-fill {
+  height: 100%;
+  border-radius: var(--r-full);
+  transition: width 0.8s ease;
+}
+.factor-score { font-weight: 700; font-family: var(--font-mono); text-align: right; }
+.factor-note { color: var(--clr-text-3); font-size: 0.75rem; }
+
+/* Recharts tooltip */
+.custom-tooltip {
+  background: rgba(17,24,39,0.97);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.tt-title { font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
+.tt-score { color: #38bdf8; font-size: 0.875rem; }
+.tt-note  { color: #94a3b8; font-size: 0.8125rem; margin-top: 2px; }
+
+/* Job role cards */
+.job-role-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+.job-role-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t-fast);
+}
+.job-role-card:hover { border-color: var(--clr-border-hover); }
+
+.job-role-top {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.job-rank { font-size: 0.75rem; font-weight: 700; color: var(--clr-text-3); width: 24px; }
+.job-title { flex: 1; font-size: 0.9375rem; font-weight: 600; color: var(--clr-text); }
+.job-conf { font-size: 0.875rem; font-weight: 800; font-family: var(--font-mono); }
+
+.job-bar-bg {
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+.job-bar-fill {
+  height: 100%;
+  border-radius: var(--r-full);
+  transition: width 1s ease;
+}
+
+/* Skills by category */
+.skill-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sp-5);
+}
+
+.skill-cat-group { display: flex; flex-direction: column; gap: var(--sp-2); }
+
+.skill-cat-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--clr-primary);
+}
+
+.skill-pill-row { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+
+.skill-pill {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  background: var(--clr-primary-dim);
+  color: var(--clr-primary);
+  border: 1px solid hsl(217,91%,60%,0.2);
+  font-weight: 500;
+}
+
+/* Empty state */
+.results-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .row-two { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .factor-row {
+    grid-template-columns: 120px 1fr 50px;
+  }
+  .factor-note { display: none; }
+}

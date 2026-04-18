@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+venv/
+.venv/
+env/
+
+# ML model & data (don't commit large files)
+resume-analyser-backend/model/classifier.pkl
+resume-analyser-backend/data/
+
+# Node
+node_modules/
+dist/
+*.local
+
+# Vite
+.vite/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
