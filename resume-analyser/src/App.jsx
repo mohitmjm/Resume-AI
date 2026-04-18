@@ -5,11 +5,9 @@ import ResultsPage from './pages/ResultsPage';
 import HistoryPage from './pages/HistoryPage';
 import './styles/index.css';
 
-const basename = import.meta.env.PROD ? '/resume-analyser' : '';
-
 export default function App() {
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: mode === 'production' ? '/resume-analyser/' : '/',
+  base: '/',
   server: {
     port: 5175,
     proxy: {
