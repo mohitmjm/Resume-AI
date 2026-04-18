@@ -79,7 +79,17 @@ def analyse():
     education = extract_education(text)
     top_role = job_roles[0]["role"] if job_roles else "Professional"
 
-    summary = generate_summary(name, top_role, all_skills, years_exp, education, ats["total"])
+    # summary_length: client-chosen word count (20–80), default 40
+    try:
+        summary_length = int(request.form.get("summary_length", 40))
+        summary_length = max(20, min(80, summary_length))
+    except (ValueError, TypeError):
+        summary_length = 40
+
+    summary = generate_summary(
+        name, top_role, all_skills, years_exp, education,
+        ats["total"], max_words=summary_length
+    )
 
     return jsonify({
         "name": name,

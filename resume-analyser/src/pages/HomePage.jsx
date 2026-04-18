@@ -16,6 +16,7 @@ export default function HomePage() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [summaryLength, setSummaryLength] = useState(40);
 
   const onDrop = useCallback((accepted, rejected) => {
     setError('');
@@ -46,6 +47,7 @@ export default function HomePage() {
     try {
       const formData = new FormData();
       formData.append('file', file);
+      formData.append('summary_length', summaryLength);
 
       const API_URL = import.meta.env.VITE_API_URL || '';
       const res = await fetch(`${API_URL}/api/analyse`, {
@@ -113,6 +115,25 @@ export default function HomePage() {
             )}
 
             {error && <div className="upload-error" role="alert">⚠️ {error}</div>}
+
+            {/* Summary length selector */}
+            <div className="summary-length-wrap">
+              <p className="sl-label">
+                Summary length: <span className="sl-value">{summaryLength} words</span>
+              </p>
+              <div className="sl-pills">
+                {[20, 30, 40, 50, 60, 70, 80].map((n) => (
+                  <button
+                    key={n}
+                    className={`sl-pill ${summaryLength === n ? 'sl-pill-active' : ''}`}
+                    onClick={() => setSummaryLength(n)}
+                    type="button"
+                  >
+                    {n}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             <button
               className="btn btn-primary btn-lg analyse-btn"
